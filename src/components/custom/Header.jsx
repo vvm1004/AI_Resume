@@ -7,19 +7,19 @@ function Header() {
     const { user, isSignedIn } = useUser();
     return (
         <div className='p-3 px-5 flex justify-between shadow-md'>
-            <img src='/logo.svg' width={100} height={100} />
-
+             <Link to={'/dashboard'}>
+            <img src='/logo.svg' className='cursor-pointer' width={100} height={100} />
+            </Link>
             {isSignedIn ?
                 <div className='flex gap-2 items-center'>
                     <Link to={'/dashboard'}>
-                        <Button variant="outlỉne">Dashboard</Button>
+                        <Button variant="outline">Dashboard</Button>
                     </Link>
                     <UserButton />
                 </div> :
                 <Link to={'/auth/sign-in'}>
                     <Button>Get Started</Button>
-
-                </Link >
+                </Link>
             }
 
         </div>
