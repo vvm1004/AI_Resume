@@ -54,7 +54,7 @@ function Education() {
     setLoading(true)
     const data={
       data:{
-        education:educationalList.map(({ id, ...rest }) => rest)
+        education:educationalList?.map(({ id, ...rest }) => rest)
       }
     }
 
@@ -81,7 +81,7 @@ function Education() {
     <p>Add Your educational details</p>
 
     <div>
-      {educationalList.map((item,index)=>(
+      {educationalList?.map((item,index)=>(
         <div>
           <div className='grid grid-cols-2 gap-3 border p-3 my-5 rounded-lg'>
             <div className='col-span-2'>
