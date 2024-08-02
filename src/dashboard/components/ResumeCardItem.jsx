@@ -67,7 +67,7 @@ function ResumeCardItem({ resume, refreshData }) {
       </Link>
       <div className='border p-3 flex justify-between  text-white rounded-b-lg shadow-lg'
         style={{
-          background: resume?.themeColor ? resume?.themeColor || 'blue'
+          background: resume?.themeColor  || 'blue'
         }}>
         <h2 className='text-sm'>{resume.title}</h2>
 
