@@ -10,15 +10,16 @@ function EditResume() {
     const {resumeId}=useParams();
     const [resumeInfo,setResumeInfo]=useState();
     useEffect(()=>{
-       
+      console.log(resumeId)
+
         GetResumeInfo();
     },[])
 
 
     const GetResumeInfo=()=>{
         GlobalApi.GetResumeById(resumeId).then(resp=>{
-          console.log(resp.data.data);
-          setResumeInfo(resp.data.data);
+          console.log(resp.data);
+          setResumeInfo(resp.data);
         })
     }
 

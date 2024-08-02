@@ -27,7 +27,7 @@ function Summery({enabledNext}) {
         const PROMPT=prompt.replace('{jobTitle}',resumeInfo?.jobTitle);
         console.log(PROMPT);
         const result=await AIChatSession.sendMessage(PROMPT);
-        console.log(JSON.parse(result.response.text()))
+        // console.log(JSON.parse(result.response.text()))
        
         setAiGenerateSummeryList(JSON.parse(result.response.text()))
         setLoading(false);
@@ -38,9 +38,7 @@ function Summery({enabledNext}) {
        
         setLoading(true)
         const data={
-            data:{
-                summery:summery
-            }
+            summery:summery
         }
         GlobalApi.UpdateResumeDetail(params?.resumeId,data).then(resp=>{
             console.log(resp);

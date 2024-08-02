@@ -5,7 +5,7 @@ function PersonalDetailPreview({resumeInfo}) {
     <div>
         <h2 className='font-bold text-xl text-center'
         style={{
-            color:resumeInfo?.themeColor
+            color:resumeInfo?.themeColor || "blue"
         }}
         >
             {resumeInfo?.firstName} {resumeInfo?.lastName}</h2>
@@ -13,23 +13,23 @@ function PersonalDetailPreview({resumeInfo}) {
        >{resumeInfo?.jobTitle}</h2>
        <h2 className='text-center font-normal text-xs'
         style={{
-            color:resumeInfo?.themeColor
+            color:resumeInfo?.themeColor || "blue"
         }}>{resumeInfo?.address}</h2>
 
         <div className='flex justify-between'>
             <h2 className='font-normal text-xs'
              style={{
-                color:resumeInfo?.themeColor
+                color:resumeInfo?.themeColor || "blue"
             }}>{resumeInfo?.phone}</h2>
             <h2 className='font-normal text-xs'
              style={{
-                color:resumeInfo?.themeColor
+                color:resumeInfo?.themeColor || "blue"
             }}>{resumeInfo?.email}</h2>
 
         </div>
         <hr className='border-[1.5px] my-2'
         style={{
-            borderColor:resumeInfo?.themeColor
+            borderColor:resumeInfo?.themeColor || "blue"
         }}
         />
     </div>

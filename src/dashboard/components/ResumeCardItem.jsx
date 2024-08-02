@@ -35,7 +35,7 @@ function ResumeCardItem({ resume, refreshData }) {
 
   const onDelete = () => {
     setLoading(true);
-    GlobalApi.DeleteResumeById(resume.id).then(resp => {
+    GlobalApi.DeleteResumeById(resume._id).then(resp => {
       console.log(resp);
       toast('Resume Deleted!');
       refreshData()
@@ -48,14 +48,14 @@ function ResumeCardItem({ resume, refreshData }) {
   return (
 
     <div className=''>
-      <Link to={'/dashboard/resume/' + resume.id + "/edit"}>
+      <Link to={'/dashboard/resume/' + resume._id + "/edit"}>
         <div className='p-14  bg-gradient-to-b
           from-pink-100 via-purple-200 to-blue-200
         h-[280px] 
           rounded-t-lg border-t-4
         '
           style={{
-            borderColor: resume?.themeColor
+            borderColor: resume?.themeColor  || 'blue'
           }}
         >
           <div className='flex 
@@ -67,7 +67,7 @@ function ResumeCardItem({ resume, refreshData }) {
       </Link>
       <div className='border p-3 flex justify-between  text-white rounded-b-lg shadow-lg'
         style={{
-          background: resume?.themeColor
+          background: resume?.themeColor ? resume?.themeColor || 'blue'
         }}>
         <h2 className='text-sm'>{resume.title}</h2>
 
@@ -77,9 +77,9 @@ function ResumeCardItem({ resume, refreshData }) {
           </DropdownMenuTrigger>
           <DropdownMenuContent>
 
-            <DropdownMenuItem onClick={() => navigation('/dashboard/resume/' + resume.id + "/edit")}>Edit</DropdownMenuItem>
-            <DropdownMenuItem onClick={() => navigation('/my-resume/' + resume.id + "/view")}>View</DropdownMenuItem>
-            <DropdownMenuItem onClick={() => navigation('/my-resume/' + resume.id + "/view")}>Download</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => navigation('/dashboard/resume/' + resume._id + "/edit")}>Edit</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => navigation('/my-resume/' + resume._id + "/view")}>View</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => navigation('/my-resume/' + resume._id + "/view")}>Download</DropdownMenuItem>
             <DropdownMenuItem onClick={() => setOpenAlert(true)}>Delete</DropdownMenuItem>
 
           </DropdownMenuContent>

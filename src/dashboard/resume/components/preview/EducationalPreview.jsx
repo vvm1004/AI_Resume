@@ -5,18 +5,18 @@ function EducationalPreview({resumeInfo}) {
     <div className='my-6'>
     <h2 className='text-center font-bold text-sm mb-2'
     style={{
-        color:resumeInfo?.themeColor
+        color:resumeInfo?.themeColor || 'blue'
     }}
     >Education</h2>
     <hr style={{
-        borderColor:resumeInfo?.themeColor
+        borderColor:resumeInfo?.themeColor  || 'blue'
     }} />
 
     {resumeInfo?.education.map((education,index)=>(
-        <div key={index} className='my-5'>
+        <div key={education._id} className='my-5'>
             <h2 className='text-sm font-bold'
                 style={{
-                    color:resumeInfo?.themeColor
+                    color:resumeInfo?.themeColor  || 'blue'
                 }}
             >{education.universityName}</h2>
             <h2 className='text-xs flex justify-between'>{education?.degree} in {education?.major}

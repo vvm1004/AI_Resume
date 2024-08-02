@@ -25,7 +25,7 @@ function Experience() {
     const [loading,setLoading]=useState(false);
 
     useEffect(()=>{
-        resumeInfo?.Experience?.length>0&&setExperinceList(resumeInfo?.Experience)
+        resumeInfo?.experience?.length>0&&setExperinceList(resumeInfo?.experience)
         
     },[])
 
@@ -64,7 +64,7 @@ function Experience() {
     useEffect(()=>{
         setResumeInfo({
             ...resumeInfo,
-            Experience:experinceList
+            experience: experinceList
         });
      
     },[experinceList]);
@@ -73,9 +73,7 @@ function Experience() {
     const onSave=()=>{
         setLoading(true)
         const data={
-            data:{
-                Experience:experinceList.map(({ id, ...rest }) => rest)
-            }
+            experience:experinceList.map(({ id, ...rest }) => rest)
         }
 
          console.log(experinceList)

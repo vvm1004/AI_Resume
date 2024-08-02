@@ -36,7 +36,7 @@ function PersonalDetail({enabledNext}) {
         e.preventDefault();
         setLoading(true)
         const data={
-            data:formData
+            ...formData
         }
         GlobalApi.UpdateResumeDetail(params?.resumeId,data).then(resp=>{
             console.log(resp);

@@ -18,8 +18,8 @@ function Dashboard() {
   const GetResumesList=()=>{
     GlobalApi.GetUserResumes(user?.primaryEmailAddress?.emailAddress)
     .then(resp=>{
-      console.log(resp.data.data)
-      setResumeList(resp.data.data);
+      console.log(resp.data)
+      setResumeList(resp.data);
     })
   }
   return (
@@ -31,7 +31,7 @@ function Dashboard() {
       mt-10
       '>
         <AddResume/>
-        {resumeList.length>0?resumeList.map((resume,index)=>(
+        {resumeList?.length>0?resumeList.map((resume,index)=>(
           <ResumeCardItem resume={resume} key={index} refreshData={GetResumesList} />
         )):
         [1,2,3,4].map((item,index)=>(
